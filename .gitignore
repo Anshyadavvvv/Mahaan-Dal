@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Build files
+.next/
+dist/
+build/
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*

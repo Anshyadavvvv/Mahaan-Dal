@@ -1,0 +1,1 @@
+import {NextRequest} from 'next/server';import {save} from '@/lib/api';import {Grievance} from '@/lib/models';import {grievanceSchema} from '@/lib/validation';export const runtime='nodejs';export async function POST(req:NextRequest){const reference=`MD-${new Date().getFullYear()}-${String(Date.now()).slice(-6)}`;return save(req,grievanceSchema,Grievance,{reference})}

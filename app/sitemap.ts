@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';import {siteConfig} from '@/site.config';export default function sitemap():MetadataRoute.Sitemap{return ['','about','history','agenda','contact','privacy','terms','support','membership','jan-sunwai'].map(p=>({url:`${siteConfig.url}/${p}`,lastModified:new Date(),changeFrequency:'monthly',priority:p===''?1:.7}))}

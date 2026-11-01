@@ -1,0 +1,188 @@
+{
+  "brand": "Mahan Dal",
+  "tagline": "Platform for Rights, Dignity and Justice",
+  "eciNotice": "Registered Political Party under Election Commission of India",
+  "helpline": "Helpline & Membership",
+  "nav": {
+    "foundation": "Our Foundation",
+    "agenda": "Our Agenda",
+    "about": "About Us",
+    "history": "Our History",
+    "contact": "Contact"
+  },
+  "hero": [
+    {
+      "title": "Jai Mahan !!",
+      "subtitle": "Together for rights, dignity and justice in public service",
+      "cta": "Explore Our Ideology"
+    },
+    {
+      "title": "Your Voice Deserves to Be Heard",
+      "subtitle": "Submit your grievance directly to our leadership — we stand with you",
+      "cta": "Submit a Grievance (Jan Sunwai)"
+    },
+    {
+      "title": "Change Begins With You",
+      "subtitle": "Join Mahan Dal and take part in securing justice for marginalized communities",
+      "cta": "Become a Digital Member"
+    }
+  ],
+  "quote": "I have entered politics not to enjoy its comforts, but to secure rights, entitlements and justice for communities pushed to the margins.",
+  "president": "National President",
+  "presidentSection": {
+    "title": "Message from the National President",
+    "subtitle": "A lifelong struggle for the dignity, equality and empowerment of the underprivileged",
+    "bio": "For over two decades, Shri Keshav Dev Maurya has spearheaded grassroots mobilization for the constitutional rights, social recognition and economic empowerment of backwards, Dalits, farmers and working-class families across the region. He believes genuine democracy requires equal access to governance and representative power for every section of society."
+  },
+  "stats": [
+    { "val": "20+", "label": "Years of Grassroots Struggle" },
+    { "val": "75+", "label": "Active District Units" },
+    { "val": "10L+", "label": "Dedicated Cadres & Members" },
+    { "val": "24/7", "label": "Public Grievance Redressal" }
+  ],
+  "foundation": "Our Foundation & Core Principles",
+  "foundationSubtitle": "Building an egalitarian, exploitation-free society rooted in equality, dignity and constitutional justice",
+  "foundationCards": [
+    ["Social Equality", "Establishing a fair and casteless social order where every citizen enjoys equal opportunity and respect without prejudice."],
+    ["Constitutional Justice", "Upholding the vision of Dr. B.R. Ambedkar to safeguard constitutional protections and rule of law for all."],
+    ["Selfless Public Service", "Providing transparent and accessible public assistance so that development reaches the last person in society."]
+  ],
+  "agenda": "Our 6-Point People's Agenda",
+  "agendaSubtitle": "Our core priorities for transparent governance, public welfare and social upliftment",
+  "agendaCards": [
+    "Quality Education",
+    "Dignified Employment",
+    "Constitutional Justice",
+    "Accessible Healthcare",
+    "Women's Empowerment",
+    "Farmers & Workers Welfare"
+  ],
+  "agendaDetails": [
+    {
+      "title": "Quality Education & Free Competitive Coaching",
+      "desc": "Ensuring modern, high-standard schooling and free competitive coaching for children from economically disadvantaged, rural, and backward households."
+    },
+    {
+      "title": "Dignified Employment & Skill Development",
+      "desc": "Timely recruitment in vacant public service positions, promoting local micro-industries, and offering zero-interest entrepreneurial seed loans for youth."
+    },
+    {
+      "title": "Constitutional Social Justice & Caste Census",
+      "desc": "Guaranteeing equitable representation in governance, administration, and resource distribution proportional to population shares."
+    },
+    {
+      "title": "Universal, Accessible & Free Healthcare",
+      "desc": "24/7 fully-equipped primary healthcare centers at every block and village panchayat level with free medicines and emergency services."
+    },
+    {
+      "title": "Women Security, Respect & Economic Empowerment",
+      "desc": "Financial backing for women-led self-help groups, robust safety frameworks in public spaces, and 50% representation in decision-making bodies."
+    },
+    {
+      "title": "Farmers Welfare, Fair MSP & Worker Dignity",
+      "desc": "Legally binding Minimum Support Price (MSP) at 1.5x input cost, timely fertilizer supply, free irrigation electricity, and enhanced daily wage rates."
+    }
+  ],
+  "services": {
+    "janSunwaiTitle": "Online Jan Sunwai Cell",
+    "janSunwaiDesc": "Lodge administrative, civil, or public grievances directly with our legal and public redressal unit with a unique tracking code.",
+    "letterTitle": "Direct Letter to the National President",
+    "letterDesc": "Communicate grassroots issues, policy ideas, or organizational feedback straight to National President Shri Keshav Dev Maurya.",
+    "memberTitle": "Digital Membership Drive",
+    "memberDesc": "Join the Mahan Dal movement, receive your digital membership ID, and champion public service in your locality."
+  },
+  "inspiration": "Our Guiding Inspirations",
+  "inspirationSubtitle": "Honoring the legendary pioneers of social equality, knowledge, self-respect, and revolution",
+  "inspirationsList": [
+    {
+      "name": "Mahatma Jyotirao Phule",
+      "title": "Father of Social Revolution",
+      "desc": "Founder of the Satyashodhak Samaj, who pioneered universal education and equal human dignity for the downtrodden."
+    },
+    {
+      "name": "Krantijyoti Savitribai Phule",
+      "title": "Pioneer of Women’s Education",
+      "desc": "India’s first female teacher and courageous reformer who broke deep-seated social taboos to educate girls."
+    },
+    {
+      "name": "Chhatrapati Shahu Ji Maharaj",
+      "title": "Pioneer of Affirmative Action",
+      "desc": "Visionary king of Kolhapur who enacted 50% reservation and free universal schooling for backward communities in 1902."
+    },
+    {
+      "name": "Dr. Bhimrao Ramji Ambedkar",
+      "title": "Architect of the Constitution",
+      "desc": "Global champion of human rights and justice who enshrined liberty, equality, fraternity, and constitutional democracy."
+    },
+    {
+      "name": "Emperor Ashoka the Great",
+      "title": "Universal Monarch & Patron of Dhamma",
+      "desc": "Exemplar of compassionate welfare governance and non-violence whose Lion Capital and Ashoka Chakra are India’s national emblems."
+    },
+    {
+      "name": "Manyavar Kanshi Ram Ji",
+      "title": "Bahujan Social Revolutionary",
+      "desc": "Political strategist who infused political consciousness and power-sharing consciousness into marginalized masses."
+    }
+  ],
+  "events": "Activities, Movements & News",
+  "eventsSubtitle": "Continuous grassroots momentum and dedicated advocacy on critical public issues",
+  "newsUpdates": [
+    {
+      "tag": "Party Organization",
+      "date": "October 2026",
+      "title": "State-wide Jan Samvad & Cadre Convention successfully concluded",
+      "desc": "Thousands of local leaders and youth cadres gathered under the leadership of the National President to reaffirm commitment to public welfare."
+    },
+    {
+      "tag": "Farmers Wing",
+      "date": "October 2026",
+      "title": "Peaceful district-level memorandums submitted for MSP guarantee and fertilizer availability",
+      "desc": "An 11-point charter of agricultural demands was formally submitted to district administrative officials."
+    },
+    {
+      "tag": "Youth Wing",
+      "date": "October 2026",
+      "title": "Youth Employment Dialogue and free competitive exam coaching desks inaugurated",
+      "desc": "Career guidance sessions and digital study libraries rolled out for rural students."
+    }
+  ],
+  "membership": "Become a Member",
+  "jan": "Jan Sunwai",
+  "letter": "Write to the President",
+  "letterTitle": "A Letter to the National President",
+  "letterSubtitle": "MAHAN DAL LEADERSHIP DIRECT LINE",
+  "letterHelp": "Share your concerns, suggestions, or community issues directly with the National President. Confidentiality is strictly respected.",
+  "name": "Full Name",
+  "mobile": "10-Digit Mobile Number",
+  "subject": "Subject of Letter",
+  "message": "Detailed Message",
+  "subjectPlaceholder": "Primary concern (e.g., local school facility / irrigation canal repair)",
+  "messagePlaceholder": "Write your detailed observations, request, or suggestions here...",
+  "consent": "I agree to the Party's Privacy Policy and code of conduct.",
+  "send": "Send Letter",
+  "close": "Close",
+  "success": "Your submission has been received successfully.",
+  "loading": "Submitting…",
+  "district": "District / Locality",
+  "category": "Issue Category",
+  "details": "Details of Grievance",
+  "upload": "Attach Photo / Application / PDF (up to 5 MB)",
+  "dob": "Date of Birth",
+  "gender": "Gender",
+  "address": "Permanent Address (Village / Ward, Block, PIN Code)",
+  "submit": "Submit Application",
+  "reference": "Your Reference Number",
+  "missed": "Join Mahan Dal by giving a missed call:",
+  "footer": "Jai Mahan !! A movement for rights, dignity and justice",
+  "contact": "Contact & National Headquarters",
+  "write": "Send Message",
+  "required": "This field is required.",
+  "invalidMobile": "Please enter a valid 10-digit Indian mobile number.",
+  "privacy": "Privacy Policy",
+  "terms": "Terms & Conditions",
+  "support": "Support & Help",
+  "sendError": "Submission could not be completed at this moment. Please try again.",
+  "menu": "Menu",
+  "all": "All rights reserved."
+}
