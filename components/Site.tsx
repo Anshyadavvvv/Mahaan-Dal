@@ -31,6 +31,7 @@ import {
   Sparkles,
   ExternalLink
 } from 'lucide-react';
+import { FAQSection } from './FAQSection';
 import hi from '@/lib/translations/hi.json';
 import en from '@/lib/translations/en.json';
 import { siteConfig } from '@/lib/config';
@@ -51,6 +52,8 @@ export function Site({ children }: { children?: React.ReactNode }) {
   const [lang, setLang] = useState<Lang>('hi');
   const [open, setOpen] = useState<Kind | null>(null);
   const [menu, setMenu] = useState(false);
+
+  const triggerModal = (k: Kind) => setOpen(k);
 
   const t = (lang === 'hi' ? hi : en) as Dict;
 
@@ -272,7 +275,7 @@ export function Site({ children }: { children?: React.ReactNode }) {
 
       {/* Main Content Area */}
       <div className="content-wrapper">
-        {children ?? <Home t={t} lang={lang} />}
+        {children ?? <Home t={t} lang={lang} triggerModal={triggerModal} />}
       </div>
 
       {/* Portal Footer */}
@@ -324,7 +327,7 @@ export function Site({ children }: { children?: React.ReactNode }) {
   );
 }
 
-function Home({ t, lang }: { t: Dict; lang: Lang }) {
+function Home({ t, lang, triggerModal }: { t: Dict; lang: Lang; triggerModal: (k: Kind) => void }) {
   const [slide, setSlide] = useState(0);
   const [heroPaused, setHeroPaused] = useState(false);
   const touchStart = useRef(0);
@@ -337,17 +340,18 @@ function Home({ t, lang }: { t: Dict; lang: Lang }) {
     return () => clearInterval(timer);
   }, [heroPaused]);
 
-  const triggerModal = (kind: Kind) => {
-    window.dispatchEvent(new CustomEvent('md:open', { detail: kind }));
-  };
-
   const agendaIcons = [GraduationCap, Briefcase, Scale, HeartPulse, Users, Tractor];
 
   return (
     <main>
       {/* Hero Section */}
       <section
-        className="hero"
+        className="relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #ea580c 0%, #f97316 40%, #c2410c 100%)',
+          color: '#ffffff',
+          padding: '56px 0 64px'
+        }}
         onMouseEnter={() => setHeroPaused(true)}
         onMouseLeave={() => setHeroPaused(false)}
         onTouchStart={(e) => {
@@ -362,12 +366,56 @@ function Home({ t, lang }: { t: Dict; lang: Lang }) {
           setHeroPaused(false);
         }}
       >
-        <div className="hero-pattern" />
-        <div className="hero-glow" />
+        <div
+          className="hero-pattern"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            opacity: 0.08,
+            backgroundImage: 'radial-gradient(circle at 25px 25px, #ffffff 2%, transparent 0%), radial-gradient(circle at 75px 75px, #ffffff 2%, transparent 0%)',
+            backgroundSize: '100px 100px',
+            pointerEvents: 'none'
+          }}
+        />
+        <div
+          className="hero-glow"
+          style={{
+            position: 'absolute',
+            top: '-20%',
+            right: '-10%',
+            width: '600px',
+            height: '600px',
+            background: 'radial-gradient(circle, rgba(254, 215, 170, 0.25) 0%, rgba(254, 215, 170, 0) 70%)',
+            borderRadius: '50%',
+            pointerEvents: 'none'
+          }}
+        />
 
-        <div className="wrap hero-inner">
-          <div className="hero-copy">
-            <div className="hero-tag">
+        <div className="wrap" style={{
+          display: 'grid',
+          gridTemplateColumns: '1.25fr 0.85fr',
+          alignItems: 'center',
+          gap: '36px',
+          minHeight: '460px',
+          position: 'relative'
+        }}>
+          <div className="hero-copy" style={{ zIndex: 2 }}>
+            <div className="hero-tag" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: 'rgba(255, 255, 255, 0.18)',
+              backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(255, 255, 255, 0.35)',
+              padding: '6px 14px',
+              borderRadius: '9999px',
+              fontSize: '13px',
+              fontWeight: '700',
+              letterSpacing: '0.05em',
+              marginBottom: '20px',
+              textTransform: 'uppercase',
+              maxWidth: '100%'
+            }}>
               <Sparkles size={14} />
               <span>{t.brand} · {t.tagline}</span>
             </div>
@@ -380,16 +428,55 @@ function Home({ t, lang }: { t: Dict; lang: Lang }) {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.35 }}
               >
-                <h1>{t.hero[slide].title}</h1>
-                <p>{slide === 0 ? t.quote : t.hero[slide].subtitle}</p>
+                <h1 style={{
+                  fontSize: 'clamp(32px, 5vw, 60px)',
+                  lineHeight: 1.15,
+                  fontWeight: 900,
+                  margin: '0 0 18px',
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.15)',
+                  fontFamily: 'var(--font-display)',
+                  overflowWrap: 'break-word'
+                }}>{t.hero[slide].title}</h1>
+                <p style={{
+                  fontSize: 'clamp(16px, 1.8vw, 20px)',
+                  lineHeight: 1.7,
+                  maxWidth: '600px',
+                  margin: '0 0 28px',
+                  color: '#fffaf0',
+                  fontWeight: 400,
+                  overflowWrap: 'break-word'
+                }}>{slide === 0 ? t.quote : t.hero[slide].subtitle}</p>
 
-                <div className="hero-actions">
+                <div className="hero-actions" style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '14px',
+                  alignItems: 'center'
+                }}>
                   <button
                     className="btn-primary"
                     onClick={() => {
                       if (slide === 1) triggerModal('jan');
                       else if (slide === 2) triggerModal('member');
                       else document.getElementById('leadership')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '10px',
+                      background: '#ffffff',
+                      color: '#ea580c',
+                      fontWeight: 800,
+                      fontSize: '16px',
+                      padding: '13px 26px',
+                      borderRadius: '14px',
+                      border: 'none',
+                      cursor: 'pointer',
+                      boxShadow: '0 10px 25px -3px rgba(0, 0, 0, 0.25)',
+                      transition: 'all 0.2s ease',
+                      textDecoration: 'none',
+                      minHeight: '48px'
                     }}
                   >
                     <span>{t.hero[slide].cta}</span>
@@ -399,6 +486,24 @@ function Home({ t, lang }: { t: Dict; lang: Lang }) {
                   <button
                     className="btn-outline-white"
                     onClick={() => triggerModal('letter')}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '10px',
+                      background: 'rgba(255, 255, 255, 0.15)',
+                      backdropFilter: 'blur(6px)',
+                      color: '#ffffff',
+                      fontWeight: 700,
+                      fontSize: '16px',
+                      padding: '13px 22px',
+                      borderRadius: '14px',
+                      border: '1.5px solid rgba(255, 255, 255, 0.5)',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      textDecoration: 'none',
+                      minHeight: '48px'
+                    }}
                   >
                     <Send size={16} />
                     <span>{t.letter}</span>
@@ -408,46 +513,146 @@ function Home({ t, lang }: { t: Dict; lang: Lang }) {
             </AnimatePresence>
 
             {/* Slide Navigation Controls */}
-            <div className="hero-controls">
+            <div className="hero-controls" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginTop: '32px'
+            }}>
               {t.hero.map((_, idx) => (
                 <button
                   key={idx}
                   className={`hero-dot ${idx === slide ? 'active' : ''}`}
                   onClick={() => setSlide(idx)}
                   aria-label={`Go to slide ${idx + 1}`}
+                  style={{
+                    width: idx === slide ? '32px' : '12px',
+                    height: '12px',
+                    borderRadius: '9999px',
+                    background: idx === slide ? '#ffffff' : 'rgba(255, 255, 255, 0.4)',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: 0,
+                    transition: 'all 0.2s ease',
+                    minHeight: '12px',
+                    boxShadow: idx === slide ? '0 0 12px rgba(255, 255, 255, 0.8)' : 'none'
+                  }}
                 />
               ))}
             </div>
           </div>
 
           {/* President Prestige Card in Hero */}
-          <div className="president-card-hero">
-            <div className="president-portrait-frame">
+          <div className="president-card-hero" style={{
+            position: 'relative',
+            background: 'rgba(255, 255, 255, 0.98)',
+            borderRadius: '26px',
+            padding: '24px',
+            color: '#0f172a',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.35)',
+            border: '4px solid rgba(255, 255, 255, 0.7)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            maxWidth: '380px',
+            width: '100%',
+            marginLeft: 'auto'
+          }}>
+            <div className="president-portrait-frame" style={{
+              width: '150px',
+              height: '150px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #fed7aa 0%, #ea580c 100%)',
+              border: '5px solid #ffffff',
+              boxShadow: '0 10px 25px rgba(234, 88, 12, 0.3)',
+              display: 'grid',
+              placeItems: 'center',
+              position: 'relative',
+              marginBottom: '16px',
+              flexShrink: 0
+            }}>
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 className="president-silhouette-svg"
                 aria-hidden="true"
+                style={{ width: '88px', height: '88px', color: '#ffffff' }}
               >
                 <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z" />
               </svg>
-              <div className="president-badge-chip">
+              <div className="president-badge-chip" style={{
+                position: 'absolute',
+                bottom: '-4px',
+                background: '#15803d',
+                color: '#ffffff',
+                fontSize: '11px',
+                fontWeight: 800,
+                padding: '3px 12px',
+                borderRadius: '9999px',
+                border: '2px solid #ffffff',
+                boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                whiteSpace: 'nowrap'
+              }}>
                 <span>{t.president}</span>
               </div>
             </div>
 
-            <div className="president-name-plate">
-              <h3>{siteConfig.president}</h3>
-              <span>{t.president}</span>
+            <div className="president-name-plate" style={{ marginBottom: '10px' }}>
+              <h3 style={{
+                fontSize: '21px',
+                fontWeight: 800,
+                margin: '0 0 4px',
+                color: '#0f172a',
+                fontFamily: 'var(--font-display)'
+              }}>{siteConfig.president}</h3>
+              <span style={{
+                display: 'inline-block',
+                background: 'rgba(234, 88, 12, 0.1)',
+                color: '#ea580c',
+                fontWeight: 700,
+                fontSize: '12px',
+                padding: '3px 10px',
+                borderRadius: '6px'
+              }}>{t.president}</span>
             </div>
 
-            <p className="president-quote-snippet">
+            <p className="president-quote-snippet" style={{
+              fontSize: '14px',
+              lineHeight: 1.6,
+              color: '#475569',
+              fontStyle: 'italic',
+              margin: '0 0 16px',
+              position: 'relative',
+              padding: '0 6px'
+            }}>
               “{t.quote.length > 90 ? t.quote.slice(0, 85) + '…' : t.quote}”
             </p>
 
             <button
               className="btn-header-join"
-              style={{ width: '100%', justifyContent: 'center', height: 46 }}
+              style={{
+                width: '100%',
+                justifyContent: 'center',
+                height: 46,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)',
+                color: '#ffffff',
+                fontWeight: 700,
+                fontSize: '14px',
+                padding: '10px 18px',
+                borderRadius: '12px',
+                border: 'none',
+                cursor: 'pointer',
+                boxShadow: '0 4px 12px rgba(21, 128, 61, 0.25)',
+                transition: 'all 0.2s ease',
+                whiteSpace: 'nowrap',
+                minHeight: '44px'
+              }}
               onClick={() => triggerModal('letter')}
             >
               <Send size={15} />
@@ -691,6 +896,9 @@ function Home({ t, lang }: { t: Dict; lang: Lang }) {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection title={t.faq.title} subtitle={t.faq.subtitle} items={t.faq.items} />
 
       {/* Banner Call to Action */}
       <section className="cta-banner">
@@ -991,6 +1199,7 @@ function FormModal({
     if (kind === 'member') {
       if (!obj.district?.trim()) err.district = t.required;
       if (!obj.address?.trim()) err.address = t.required;
+      if (!obj.dob?.trim()) err.dob = t.required;
     }
 
     setErrors(err);
@@ -1276,8 +1485,9 @@ function FormModal({
                 <>
                   <div className="form-grid-2">
                     <div className="form-field">
-                      <label htmlFor="field-dob">{t.dob}</label>
-                      <input id="field-dob" name="dob" type="date" />
+                      <label htmlFor="field-dob">{t.dob} *</label>
+                      <input id="field-dob" name="dob" type="date" required />
+                      {errors.dob && <span style={{ color: '#dc2626', fontSize: 12 }}>{errors.dob}</span>}
                     </div>
 
                     <div className="form-field">

@@ -473,10 +473,17 @@ export default function AdminPage() {
                   <p style={{ margin: '2px 0 0', fontWeight: 600 }}>{inspectRow.mobile}</p>
                 </div>
 
-                {inspectRow.reference && (
+                {inspectRow.dob && (
                   <div>
-                    <strong style={{ color: '#64748b' }}>Reference Code:</strong>
-                    <p style={{ margin: '2px 0 0', fontWeight: 700, color: '#16a34a' }}>{inspectRow.reference}</p>
+                    <strong style={{ color: '#64748b' }}>Date of Birth:</strong>
+                    <p style={{ margin: '2px 0 0' }}>{new Date(inspectRow.dob).toLocaleDateString('en-IN')}</p>
+                  </div>
+                )}
+
+                {inspectRow.gender && (
+                  <div>
+                    <strong style={{ color: '#64748b' }}>Gender:</strong>
+                    <p style={{ margin: '2px 0 0', textTransform: 'capitalize' }}>{inspectRow.gender}</p>
                   </div>
                 )}
 

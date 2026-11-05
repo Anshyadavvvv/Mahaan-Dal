@@ -1,5 +1,5 @@
 import mongoose,{Schema} from 'mongoose';
-const base={name:{type:String,required:true,maxlength:100},mobile:{type:String,required:true,match:/^[6-9]\d{9}$/},status:{type:String,enum:['new','in progress','resolved'],default:'new'},createdAt:{type:Date,default:Date.now}};
+const base={name:{type:String,required:true,maxlength:100},mobile:{type:String,required:true,match:/^[6-9]\d{9}$/},status:{type:String,enum:['new','in progress','resolved'],default:'new'},createdAt:{type:Date,default:Date.now},reference:{type:String,unique:true}};
 export const Letter=mongoose.models.Letter||mongoose.model('Letter',new Schema({...base,subject:{type:String,required:true,maxlength:160},message:{type:String,required:true,maxlength:5000}}));
-export const Grievance=mongoose.models.Grievance||mongoose.model('Grievance',new Schema({...base,district:{type:String,required:true,maxlength:100},category:{type:String,required:true},details:{type:String,required:true,maxlength:5000},attachment:{type:String,default:''},reference:{type:String,unique:true}}));
+export const Grievance=mongoose.models.Grievance||mongoose.model('Grievance',new Schema({...base,district:{type:String,required:true,maxlength:100},category:{type:String,required:true},details:{type:String,required:true,maxlength:5000},attachment:{type:String,default:''}}));
 export const Member=mongoose.models.Member||mongoose.model('Member',new Schema({...base,dob:{type:Date,required:true},gender:{type:String,default:''},district:{type:String,required:true,maxlength:100},address:{type:String,required:true,maxlength:500}}));

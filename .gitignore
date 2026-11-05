@@ -11,6 +11,9 @@ node_modules/
 .next/
 dist/
 build/
+freellmapi/
+
+
 
 # Logs
 npm-debug.log*

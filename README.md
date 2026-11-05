@@ -21,7 +21,7 @@ app/                 App Router pages, metadata, API routes and global CSS
   [page]/            About, history, agenda, contact, policy, membership pages
   admin/             Protected admin dashboard
   api/               Letters, Jan Sunwai, membership and admin endpoints
-components/          Shared responsive site, forms, slider and footer
+components/          Shared responsive site, forms, slider, footer and FAQ section
 lib/                 MongoDB, schemas, validation and translations
 public/images/       Add approved president and inspiration imagery here
 site.config.ts       Editable contact and party placeholders
