@@ -106,17 +106,17 @@ export default function AdminPage() {
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: 28 }}>
-            <div
+            <img
               className="logo-badge"
+              src="/mahan-dal-logo.png"
+              alt=""
+              aria-hidden="true"
               style={{
                 width: 54,
                 height: 54,
-                margin: '0 auto 16px',
-                fontSize: 28
+                margin: '0 auto 16px'
               }}
-            >
-              <span>म</span>
-            </div>
+            />
             <h1 style={{ fontSize: 24, fontWeight: 800, margin: '0 0 6px', color: '#0f172a' }}>
               Mahan Dal · Admin Portal
             </h1>
@@ -188,9 +188,7 @@ export default function AdminPage() {
       >
         <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 14 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <div className="logo-badge" style={{ width: 40, height: 40, fontSize: 20 }}>
-              <span>म</span>
-            </div>
+            <img className="logo-badge" src="/mahan-dal-logo.png" alt="" aria-hidden="true" style={{ width: 40, height: 40 }} />
             <div>
               <strong style={{ fontSize: 18, letterSpacing: -0.01 }}>महान दल · Admin Management</strong>
               <span style={{ display: 'block', fontSize: 12, color: '#94a3b8' }}>

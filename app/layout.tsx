@@ -37,6 +37,9 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'महान दल | Mahan Dal — आधिकारिक पोर्टल',
   description: 'हक़, अधिकार और न्याय के लिए समर्पित जन आंदोलन — महान दल का आधिकारिक डिजिटल पोर्टल।',
+  icons: {
+    icon: '/mahan-dal-logo.png'
+  },
   openGraph: {
     title: 'महान दल | Mahan Dal',
     description: 'जय महान !! हक़, अधिकार और न्याय का सशक्त मंच',

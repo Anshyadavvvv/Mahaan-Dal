@@ -123,9 +123,7 @@ export function Site({ children }: { children?: React.ReactNode }) {
       <header className="header">
         <div className="wrap header-inner">
           <Link href="/" className="logo" aria-label={`${t.brand} Home`}>
-            <div className="logo-badge" aria-hidden="true">
-              <span>म</span>
-            </div>
+            <img className="logo-badge" src="/mahan-dal-logo.png" alt="" aria-hidden="true" />
             <div className="logo-texts">
               <span className="logo-title">{t.brand}</span>
               <span className="logo-sub">{lang === 'hi' ? 'हक़ • अधिकार • न्याय' : 'Rights • Dignity • Justice'}</span>
@@ -185,9 +183,7 @@ export function Site({ children }: { children?: React.ReactNode }) {
               >
                 <div className="mobile-drawer-header">
                   <div className="logo" style={{ gap: 10 }}>
-                    <div className="logo-badge" style={{ width: 38, height: 38, fontSize: 20 }}>
-                      <span>म</span>
-                    </div>
+                    <img className="logo-badge" src="/mahan-dal-logo.png" alt="" aria-hidden="true" style={{ width: 38, height: 38 }} />
                     <span className="logo-title" style={{ fontSize: 20 }}>
                       {t.brand}
                     </span>
@@ -572,15 +568,11 @@ function Home({ t, lang, triggerModal }: { t: Dict; lang: Lang; triggerModal: (k
               marginBottom: '16px',
               flexShrink: 0
             }}>
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="president-silhouette-svg"
-                aria-hidden="true"
-                style={{ width: '88px', height: '88px', color: '#ffffff' }}
-              >
-                <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z" />
-              </svg>
+              <img
+                src="/keshav-prasad-maurya.jpg"
+                alt={siteConfig.president}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+              />
               <div className="president-badge-chip" style={{
                 position: 'absolute',
                 bottom: '-4px',
@@ -744,14 +736,11 @@ function Home({ t, lang, triggerModal }: { t: Dict; lang: Lang; triggerModal: (k
           <div className="president-showcase">
             <div className="showcase-visual">
               <div className="showcase-frame">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="#ea580c"
-                  style={{ width: 100, height: 100 }}
-                  aria-hidden="true"
-                >
-                  <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z" />
-                </svg>
+                <img
+                  src="/keshav-prasad-maurya.jpg"
+                  alt={siteConfig.president}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                />
               </div>
               <div className="showcase-title-box">
                 <h3>{siteConfig.president}</h3>
@@ -1034,9 +1023,7 @@ function Footer({ t, lang }: { t: Dict; lang: Lang }) {
           {/* Brand Info */}
           <div className="footer-brand">
             <Link href="/" className="logo">
-              <div className="logo-badge" style={{ width: 42, height: 42, fontSize: 22 }}>
-                <span>म</span>
-              </div>
+              <img className="logo-badge" src="/mahan-dal-logo.png" alt="" aria-hidden="true" style={{ width: 42, height: 42 }} />
               <div className="logo-texts">
                 <span className="logo-title" style={{ color: '#ffffff', fontSize: 20 }}>
                   {t.brand}
