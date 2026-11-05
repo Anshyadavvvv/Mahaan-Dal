@@ -1759,6 +1759,16 @@ select:focus-visible {
 
   .header-inner {
     height: 66px;
+    gap: 8px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .lang-switch {
+    padding: 7px 10px;
+    font-size: 12px;
   }
 
   .logo-badge {
@@ -1782,6 +1792,16 @@ select:focus-visible {
   .hero-inner {
     gap: 28px;
     min-height: auto;
+  }
+
+  .hero-copy {
+    min-width: 0;
+  }
+
+  .hero-tag {
+    align-items: flex-start;
+    text-align: left;
+    line-height: 1.4;
   }
 
   .hero h1 {
@@ -1920,7 +1940,7 @@ select:focus-visible {
   }
 
   .logo-sub {
-    font-size: 10px;
+    display: none;
   }
 
   .logo-badge {

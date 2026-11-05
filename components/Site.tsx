@@ -342,11 +342,9 @@ function Home({ t, lang, triggerModal }: { t: Dict; lang: Lang; triggerModal: (k
     <main>
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden"
+        className="hero"
         style={{
-          background: 'linear-gradient(135deg, #ea580c 0%, #f97316 40%, #c2410c 100%)',
-          color: '#ffffff',
-          padding: '56px 0 64px'
+          color: '#ffffff'
         }}
         onMouseEnter={() => setHeroPaused(true)}
         onMouseLeave={() => setHeroPaused(false)}
@@ -387,14 +385,7 @@ function Home({ t, lang, triggerModal }: { t: Dict; lang: Lang; triggerModal: (k
           }}
         />
 
-        <div className="wrap" style={{
-          display: 'grid',
-          gridTemplateColumns: '1.25fr 0.85fr',
-          alignItems: 'center',
-          gap: '36px',
-          minHeight: '460px',
-          position: 'relative'
-        }}>
+        <div className="wrap hero-inner">
           <div className="hero-copy" style={{ zIndex: 2 }}>
             <div className="hero-tag" style={{
               display: 'inline-flex',
@@ -539,35 +530,8 @@ function Home({ t, lang, triggerModal }: { t: Dict; lang: Lang; triggerModal: (k
           </div>
 
           {/* President Prestige Card in Hero */}
-          <div className="president-card-hero" style={{
-            position: 'relative',
-            background: 'rgba(255, 255, 255, 0.98)',
-            borderRadius: '26px',
-            padding: '24px',
-            color: '#0f172a',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.35)',
-            border: '4px solid rgba(255, 255, 255, 0.7)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-            maxWidth: '380px',
-            width: '100%',
-            marginLeft: 'auto'
-          }}>
-            <div className="president-portrait-frame" style={{
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #fed7aa 0%, #ea580c 100%)',
-              border: '5px solid #ffffff',
-              boxShadow: '0 10px 25px rgba(234, 88, 12, 0.3)',
-              display: 'grid',
-              placeItems: 'center',
-              position: 'relative',
-              marginBottom: '16px',
-              flexShrink: 0
-            }}>
+          <div className="president-card-hero">
+            <div className="president-portrait-frame">
               <img
                 src="/keshav-prasad-maurya.jpg"
                 alt={siteConfig.president}
