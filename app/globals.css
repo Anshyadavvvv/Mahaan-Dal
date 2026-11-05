@@ -1719,6 +1719,11 @@ select:focus-visible {
 
 /* Medium Tablets & Foldables (<= 1024px) */
 @media (max-width: 1024px) {
+  .header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .nav { display: none; }
   .menu-btn { display: flex; }
   .hero-inner { grid-template-columns: 1fr; gap: 32px; }
