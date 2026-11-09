@@ -537,83 +537,29 @@ function Home({ t, lang, triggerModal }: { t: Dict; lang: Lang; triggerModal: (k
                 alt={siteConfig.president}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
               />
-              <div className="president-badge-chip" style={{
-                position: 'absolute',
-                bottom: '-4px',
-                background: '#15803d',
-                color: '#ffffff',
-                fontSize: '11px',
-                fontWeight: 800,
-                padding: '3px 12px',
-                borderRadius: '9999px',
-                border: '2px solid #ffffff',
-                boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                whiteSpace: 'nowrap'
-              }}>
+              <div className="president-badge-chip">
                 <span>{t.president}</span>
               </div>
             </div>
 
-            <div className="president-name-plate" style={{ marginBottom: '10px' }}>
-              <h3 style={{
-                fontSize: '21px',
-                fontWeight: 800,
-                margin: '0 0 4px',
-                color: '#0f172a',
-                fontFamily: 'var(--font-display)'
-              }}>{siteConfig.president}</h3>
-              <span style={{
-                display: 'inline-block',
-                background: 'rgba(234, 88, 12, 0.1)',
-                color: '#ea580c',
-                fontWeight: 700,
-                fontSize: '12px',
-                padding: '3px 10px',
-                borderRadius: '6px'
-              }}>{t.president}</span>
+            <div className="president-card-body">
+              <div className="president-name-plate">
+                <h3 className="president-name">{siteConfig.president}</h3>
+                <span className="president-title-tag">{t.president}</span>
+              </div>
+
+              <p className="president-quote-snippet">
+                “{t.quote.length > 90 ? t.quote.slice(0, 85) + '…' : t.quote}”
+              </p>
+
+              <button
+                className="btn-president-letter"
+                onClick={() => triggerModal('letter')}
+              >
+                <Send size={15} />
+                <span>{t.letter}</span>
+              </button>
             </div>
-
-            <p className="president-quote-snippet" style={{
-              fontSize: '14px',
-              lineHeight: 1.6,
-              color: '#475569',
-              fontStyle: 'italic',
-              margin: '0 0 16px',
-              position: 'relative',
-              padding: '0 6px'
-            }}>
-              “{t.quote.length > 90 ? t.quote.slice(0, 85) + '…' : t.quote}”
-            </p>
-
-            <button
-              className="btn-header-join"
-              style={{
-                width: '100%',
-                justifyContent: 'center',
-                height: 46,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)',
-                color: '#ffffff',
-                fontWeight: 700,
-                fontSize: '14px',
-                padding: '10px 18px',
-                borderRadius: '12px',
-                border: 'none',
-                cursor: 'pointer',
-                boxShadow: '0 4px 12px rgba(21, 128, 61, 0.25)',
-                transition: 'all 0.2s ease',
-                whiteSpace: 'nowrap',
-                minHeight: '44px'
-              }}
-              onClick={() => triggerModal('letter')}
-            >
-              <Send size={15} />
-              <span>{t.letter}</span>
-            </button>
           </div>
         </div>
       </section>
@@ -1251,10 +1197,10 @@ function FormModal({
                 {kind === 'letter'
                   ? t.letterHelp
                   : kind === 'member'
-                  ? t.missed
-                  : lang === 'hi'
-                  ? 'अपनी समस्या का विवरण दर्ज करें। शिकायत दर्ज होने पर आपको ट्रैकिंग संदर्भ संख्या प्राप्त होगी।'
-                  : 'Submit the grievance details below. A unique tracking reference will be generated.'}
+                    ? t.missed
+                    : lang === 'hi'
+                      ? 'अपनी समस्या का विवरण दर्ज करें। शिकायत दर्ज होने पर आपको ट्रैकिंग संदर्भ संख्या प्राप्त होगी।'
+                      : 'Submit the grievance details below. A unique tracking reference will be generated.'}
               </p>
 
               {kind === 'member' && (

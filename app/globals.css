@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -587,7 +587,7 @@ select:focus-visible {
   margin-bottom: 10px;
 }
 
-.president-name-plate h3 {
+.president-name {
   font-size: 21px;
   font-weight: 800;
   margin: 0 0 4px;
@@ -595,7 +595,7 @@ select:focus-visible {
   font-family: var(--font-display);
 }
 
-.president-name-plate span {
+.president-title-tag {
   display: inline-block;
   background: rgba(234, 88, 12, 0.1);
   color: #ea580c;
@@ -603,6 +603,36 @@ select:focus-visible {
   font-size: 12px;
   padding: 3px 10px;
   border-radius: 6px;
+}
+
+.president-card-body {
+  width: 100%;
+}
+
+.btn-president-letter {
+  width: 100%;
+  justify-content: center;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-height: 44px;
+}
+
+.btn-president-letter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(21, 128, 61, 0.35);
 }
 
 .president-quote-snippet {
@@ -1830,18 +1860,99 @@ select:focus-visible {
   }
 
   .president-card-hero {
-    padding: 20px 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 16px;
+    padding: 16px;
     max-width: 100%;
+    margin: 0;
+  }
+
+  .president-card-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .president-portrait-frame {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .president-badge-chip {
+    font-size: 9px;
+    padding: 2px 8px;
+    bottom: -3px;
+  }
+
+  .president-name {
+    font-size: 17px;
+    margin-bottom: 2px;
+  }
+
+  .president-title-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+
+  .president-quote-snippet {
+    font-size: 12px;
+    line-height: 1.45;
+    margin: 0 0 10px;
+    padding: 0;
+  }
+
+  .btn-president-letter {
+    height: 38px;
+    min-height: 38px;
+    font-size: 13px;
+    padding: 6px 14px;
+    width: auto;
   }
 
   .president-silhouette-svg {
-    width: 72px;
-    height: 72px;
+    width: 54px;
+    height: 54px;
+  }
+
+  /* Stats Ribbon: 1 single row on mobile */
+  .stats-ribbon {
+    padding: 16px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px;
+    align-items: stretch;
+  }
+
+  .stat-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-bottom: none !important;
+    padding: 2px 4px !important;
+  }
+
+  .stat-item:last-child {
+    border-right: none !important;
+  }
+
+  .stat-val {
+    font-size: clamp(18px, 5.2vw, 26px);
+    margin-bottom: 3px;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: clamp(9px, 2.6vw, 11px);
+    line-height: 1.25;
+    white-space: normal;
+    word-break: keep-all;
   }
 
   .showcase-visual {
@@ -1963,17 +2074,37 @@ select:focus-visible {
     padding: 4px 10px;
   }
 
+  .stats-ribbon {
+    padding: 14px 0;
+  }
+
   .stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4px;
+    align-items: stretch;
+  }
+
+  .stat-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-bottom: none !important;
+    padding: 2px 4px !important;
+  }
+
+  .stat-item:last-child {
+    border-right: none !important;
   }
 
   .stat-val {
-    font-size: 24px;
+    font-size: clamp(17px, 5.2vw, 24px);
+    margin-bottom: 2px;
+    letter-spacing: -0.02em;
   }
 
   .stat-label {
-    font-size: 11px;
+    font-size: clamp(9px, 2.6vw, 11px);
+    line-height: 1.25;
+    white-space: normal;
+    word-break: keep-all;
   }
 
   .dock-action-btn {
